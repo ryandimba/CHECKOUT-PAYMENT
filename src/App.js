@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import Homepge from './Pages/Homepge';
+import HomePage from './components/Pages/HomePage';
 
 function App() {
   return (
     <>
-      <Homepge/>
+      <HomePage/>
     </>
   );
 }
