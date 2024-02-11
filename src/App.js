@@ -1,13 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Homepge from './Pages/Homepge';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      Quick Shave
-      </header>
-    </div>
+    <>
+      <Homepge/>
+    </>
   );
 }
 
