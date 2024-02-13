@@ -1,10 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(211, 210, 209);
+}
+
+.headerBar ul li{
+  /* display: flex; */
+  color: rgb(12, 12, 12);
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bolder;
+  
+}
+
+.navbar-list{
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  /* background-color: rgb(235, 231, 237); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 20px 4px 12px;
+  backdrop-filter: blur(5px);
+  /* font-family: Valents day; */
+}
+
+/* nav:hover{
+  background-color: rgb(81, 79, 79);
+} */
+
+.logo{
+  height: 40px;
+  border-radius: 50%;
+  /* padding: 10px; */
+  
+}
+
+.barber{
+  height: 400px;
+  width: 100%;
 }
 
 code {
