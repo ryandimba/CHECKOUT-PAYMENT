@@ -50,11 +50,16 @@ nav{
 }
 
 .barber{
-  height: 400px;
+  /* height: 400px; */
   width: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container{
+  backdrop-filter: blur(5px);
+
 }
