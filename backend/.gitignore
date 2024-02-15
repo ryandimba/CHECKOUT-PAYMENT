@@ -1,0 +1,13 @@
+# Ignore virtual environment
+venv/
+
+# Ignore Django migration files
+*.pyc
+__pycache__/
+db.sqlite3
+/media/
+/static/
+
+# Ignore IDE files (e.g., VSCode, PyCharm)
+.vscode/
+.idea/
