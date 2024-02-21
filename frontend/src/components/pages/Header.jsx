@@ -1,11 +1,35 @@
-import React from 'react'
+import React from "react";
+import { useRef } from "react";
 import logo from "../assets/logo.jpeg";
-
+import { Button } from "antd";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Header() {
+  const navRef = useRef();
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
   return (
     <>
-          <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <header>
+        {/* <div>Logo</div> */}
+        <nav ref={navRef}>
+        <a href="/">
+            <img src={logo} alt="" className="logo"></img>
+          </a>Quick Shave
+          <a href="/">Home</a>
+          <a href="blog">Blog</a>
+          <a href="about">About</a>
+          <a href="service">Services</a>
+          <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+            <FaTimes />
+          </button>
+        </nav>
+        <button className="nav-btn" onClick={showNavBar}>
+          <FaBars />
+        </button>
+      </header>
+      {/* <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             <img src={logo} alt="" className="logo"></img>
@@ -42,37 +66,7 @@ function Header() {
                   About
                 </a>
               </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="booking"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Services
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="nail-spa">
-                      Nail Spa
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="massage-therapy">
-                      Massage therapy
-                    </a>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="booking">
-                      Book an appointment
-                    </a>
-                  </li>
-                </ul>
-              </li>
+              
             </ul>
             <form class="d-flex" role="search">
               <input
@@ -87,10 +81,9 @@ function Header() {
             </form>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
-
-            {/* <div className="headerBar">
+      {/* <div className="headerBar">
         <nav>
           <a href="/">
             <img src={logo} alt="" className="logo"></img>
@@ -113,7 +106,7 @@ function Header() {
         </nav>
       </div> */}
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;
