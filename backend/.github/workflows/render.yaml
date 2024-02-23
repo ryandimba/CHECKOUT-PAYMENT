@@ -1,0 +1,14 @@
+services:
+  - name: web
+    buildCommand: |
+      cp -r backend /workspace
+      cd /workspace/backend
+      pip install -r requirements.txt
+    startCommand: gunicorn barbershop.wsgi:application --workers 1 --threads 8 --bind 0.0.0.0:$PORT
+    # Specify the port to listen on
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: DATABASE_URL
+        value: "mysql://root:1Gd4HDa61Fb543AA--2131EBbcdCfEGg@viaduct.proxy.rlwy.net:56143/railway"
+    healthCheckPath: /
