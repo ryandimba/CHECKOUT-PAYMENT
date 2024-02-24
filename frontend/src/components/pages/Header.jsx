@@ -14,17 +14,27 @@ function Header() {
       <header>
         {/* <div>Logo</div> */}
         <nav ref={navRef}>
-        <a href="/">
+          <a href="/">
             <img src={logo} alt="" className="logo"></img>
-          </a>Quick Shave
+          </a>
+          <a href="/">Quick Shave</a>
           <a href="/">Home</a>
           <a href="blog">Blog</a>
           <a href="about">About</a>
-          <a href="service">Services</a>
+          <a href="services">Services</a>
+          <a href="gallery">Gallery</a>
+
+          <a href="booking">
+            <Button className="btn">Book Us</Button>
+          </a>
           <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <FaTimes />
           </button>
         </nav>
+        <a href="/">
+          <img src={logo} alt="" className="logo"></img>
+        </a>
+        Quick Shave
         <button className="nav-btn" onClick={showNavBar}>
           <FaBars />
         </button>

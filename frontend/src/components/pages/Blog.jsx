@@ -1,6 +1,13 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import Barber1 from "../assets/barber1.jpg";
+import Barber2 from "../assets/barber2.jpg";
+import Barber3 from "../assets/barber3.jpg";
+import Rixa from "../assets/Rixa.jpeg";
+import Shave from "../assets/shave.webp";
+import BarberShop from "../assets/Barbershop6.jpg";
+import LoginPic from "../assets/login-pic.jpg";
 
 function Blog() {
   return (
@@ -38,21 +45,7 @@ function Blog() {
         </div>
         <div class="carousel-inner">
           <div class="carousel-item">
-            <svg
-              class="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
+            <img src={Barber1} class="d-block w-100" alt="Image 1" />
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1>Example headline.</h1>
@@ -61,7 +54,7 @@ function Blog() {
                   the carousel.
                 </p>
                 <p>
-                  <a class="btn btn-lg btn-primary" href="#">
+                  <a class="btn btn-lg btn-primary" href="register">
                     Sign up today
                   </a>
                 </p>
@@ -69,21 +62,8 @@ function Blog() {
             </div>
           </div>
           <div class="carousel-item">
-            <svg
-              class="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
+            <img src={Barber2} class="d-block w-100" alt="Image 1" />
+
             <div class="container">
               <div class="carousel-caption">
                 <h1>Another example headline.</h1>
@@ -100,21 +80,8 @@ function Blog() {
             </div>
           </div>
           <div class="carousel-item active">
-            <svg
-              class="bd-placeholder-img"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
+            <img src={Barber3} class="d-block w-100" alt="Image 1" />
+
             <div class="container">
               <div class="carousel-caption text-end">
                 <h1>One more for good measure.</h1>
@@ -123,7 +90,7 @@ function Blog() {
                   this carousel.
                 </p>
                 <p>
-                  <a class="btn btn-lg btn-primary" href="#">
+                  <a class="btn btn-lg btn-primary" href="gallery">
                     Browse gallery
                   </a>
                 </p>
@@ -159,23 +126,14 @@ function Blog() {
         {/* <!-- Three columns of text below the carousel --> */}
         <div class="row">
           <div class="col-lg-4">
-            <svg
+            <img
+              src={Rixa}
               class="bd-placeholder-img rounded-circle"
+              alt="Image 1"
               width="140"
               height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
+            />
+
             <h2 class="fw-normal">Heading</h2>
             <p>
               Some representative placeholder content for the three columns of
@@ -189,23 +147,13 @@ function Blog() {
           </div>
           {/* <!-- /.col-lg-4 --> */}
           <div class="col-lg-4">
-            <svg
+            <img
+              src={Rixa}
               class="bd-placeholder-img rounded-circle"
+              alt="Image 1"
               width="140"
               height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
+            />
             <h2 class="fw-normal">Heading</h2>
             <p>
               Another exciting bit of representative placeholder content. This
@@ -219,27 +167,17 @@ function Blog() {
           </div>
           {/* <!-- /.col-lg-4 --> */}
           <div class="col-lg-4">
-            <svg
+            <img
+              src={Rixa}
               class="bd-placeholder-img rounded-circle"
+              alt="Image 1"
               width="140"
               height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
+            />
             <h2 class="fw-normal">Heading</h2>
             <p>
-              And lastly this, the third column of representative placeholder
-              content.
+              Another exciting bit of representative placeholder content. This
+              time, we've moved on to the second column.
             </p>
             <p>
               <a class="btn btn-secondary" href="#">
@@ -267,26 +205,13 @@ function Blog() {
             </p>
           </div>
           <div class="col-md-5">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            <img
+              src={LoginPic}
+              class=" bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto "
+              alt="Image 1"
               width="500"
               height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-bg)"
-              ></rect>
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </svg>
+            />
           </div>
         </div>
 
@@ -305,26 +230,13 @@ function Blog() {
             </p>
           </div>
           <div class="col-md-5 order-md-1">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            <img
+              src={Shave}
+              class=" bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto "
+              alt="Image 1"
               width="500"
               height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-bg)"
-              ></rect>
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </svg>
+            />
           </div>
         </div>
 
@@ -344,26 +256,13 @@ function Blog() {
             </p>
           </div>
           <div class="col-md-5">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            <img
+              src={BarberShop}
+              class=" bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto "
+              alt="Image 1"
               width="500"
               height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-bg)"
-              ></rect>
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </svg>
+            />
           </div>
         </div>
 

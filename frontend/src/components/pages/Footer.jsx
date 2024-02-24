@@ -1,106 +1,71 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
   return (
     <>
-          <div class="container">
+      <div class="container">
         <footer class="py-5">
           <div class="row">
             <div class="col-6 col-md-2 mb-3">
               <h5>Section</h5>
               <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
+                  <a href="/" class="nav-link p-0 text-body-secondary">
                     Home
                   </a>
                 </li>
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    Features
+                  <a href="blog" class="nav-link p-0 text-body-secondary">
+                    Blog
                   </a>
                 </li>
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    Pricing
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    FAQs
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
+                  <a href="about" class="nav-link p-0 text-body-secondary">
                     About
+                  </a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="services" class="nav-link p-0 text-body-secondary">
+                    Services
+                  </a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="gallery" class="nav-link p-0 text-body-secondary">
+                    Gallery
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div class="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
+            <div class="col-8 col-md-2 mb-3">
+              <h5>Location:</h5>
               <ul class="nav flex-column">
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    Home
+                  <a
+                    href="https://www.google.co.ke/maps/place/Quick+Mart/
+                    @-1.3139127,36.9149247,19.37z/data=!4m6!3m5!1s0x182f132645d2856f:0x24b6e0a8f7262bab!8m2!3d-1.
+                    313847!4d36.9152902!16s%2Fg%2F11j7vpsv4n?entry=ttu"
+                    target="_blank"
+                    class="nav-link p-0 text-body-secondary"
+                  >
+                    Embakasi road, Quickmat building opposite KQ Pride Center
                   </a>
                 </li>
                 <li class="nav-item mb-2">
                   <a href="#" class="nav-link p-0 text-body-secondary">
-                    Features
+                    quickshave12@gmail.com
                   </a>
                 </li>
                 <li class="nav-item mb-2">
                   <a href="#" class="nav-link p-0 text-body-secondary">
-                    Pricing
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    FAQs
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    About
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    Home
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    Features
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    Pricing
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    FAQs
-                  </a>
-                </li>
-                <li class="nav-item mb-2">
-                  <a href="#" class="nav-link p-0 text-body-secondary">
-                    About
+                    0113880663/0724795137
                   </a>
                 </li>
               </ul>
             </div>
 
             <div class="col-md-5 offset-md-1 mb-3">
-              <form>
+              <form action="POST">
                 <h5>Subscribe to our newsletter</h5>
                 <p>Monthly digest of what's new and exciting from us.</p>
                 <div class="d-flex flex-column flex-sm-row w-100 gap-2">
@@ -144,7 +109,7 @@ function Footer() {
         </footer>
       </div>
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
