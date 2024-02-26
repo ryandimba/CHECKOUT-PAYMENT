@@ -140,10 +140,10 @@ ul li a:hover{
 }
 .form{
     width: 250px;
-    height: 380px;
+    height: auto;
     background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
     position: absolute;
-    top: -20px;
+    top: -120px;
     left: 870px;
     border-radius: 10px;
     padding: 25px;
