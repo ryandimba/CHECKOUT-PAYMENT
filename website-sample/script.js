@@ -1,4 +1,4 @@
-
+<script>
 function signup() {
     var fullname = document.getElementById("fullname").value;
     var email = document.getElementById("email").value;
@@ -47,3 +47,4 @@ function signup() {
         alert("An error occurred. Please try again later.");
     });
 }
+</script>
