@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Shave Barber Shop</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Add CSS styles for slideshow */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.gallery-item {
+  display: none;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Welcome to Quick Shave Barber Shop</h1>
+<nav>
+<ul>
+<li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
+<li><a href="#" onclick="showSection('services')">Services</a></li>
+<li><a href="#" onclick="showSection('about')">About Us</a></li>
+<li><a href="#" onclick="showSection('contact')">Contact</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section id="services" class="hidden">
+<h2>Our Services</h2>
+<ul>
+<li>Haircuts: Classic, modern, and custom styles for men of all ages.</li>
+<li>Beard Trims: Precision shaping and grooming for a polished look.</li>
+<li>Hot Towel Shaves: Experience the ultimate relaxation with our traditional hot towel shave service.</li>
+<li>Hair Coloring: Enhance your style with professional hair coloring and highlighting services.</li>
+<li>Kids' Cuts: Gentle and patient stylists ensure a positive experience for our youngest clients.</li>
+<li>Special Occasion Styling: Whether it's a wedding, party, or special event, trust us to create the perfect look for your big day.</li>
+</ul>
+</section>
+<section id="about" class="hidden">
+<h2>About Us</h2>
+<p>At Quick Shave, we believe that a good haircut is more than just a style - it's an experience. Established in the heart of Nairobi, we are dedicated to providing premium grooming services in a comfortable and welcoming environment. Our team of skilled barbers is committed to delivering precision cuts, classic styles, and modern trends tailored to each client's unique preferences. With attention to detail and a passion for the craft, we strive to exceed expectations and leave every customer looking and feeling their best.</p>
+</section>
+<section id="gallery">
+<div class="slideshow-container">
+  <div class="gallery-item fade" style="background-image: url('images/1.jpg')"></div>
+  <div class="gallery-item fade" style="background-image: url('images/2.jpg')"></div>
+  <div class="gallery-item fade" style="background-image: url('images/3.jpg')"></div>
+  <div class="gallery-item fade" style="background-image: url('images/4.jpg')"></div>
+  <!-- Caption text -->
+  <div class="text">Caption Text</div>
+</div>
+<br>
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+</section>
+<section id="contact" class="hidden">
+<h3>Contact Us</h3>
+<p><strong>Location:</strong><br>
+Embakasi Road, Quickmat Building<br>
+Opposite KQ Pride Center</p>
+<p><strong>Name:</strong><br>
+QuickShave Barber Shop, Nail Spa & Massage</p>
+<p><strong>Email:</strong><br>
+quickshave***@gmail.com</p>
+<p><strong>Phone:</strong><br>
+0113***663 / 0724***137</p>
+<p><strong>Hours of Operation:</strong><br>
+Monday - Saturday: 9:00 AM - 7:00 PM<br>
+Sunday: Closed</p>
+<p><strong>Social Media:</strong><br>
+Follow us on Instagram and Facebook for updates, promotions, and style inspiration.</p>
+</section>
+</main>
+<footer>
+<p>&copy; Quick Shave 2024 Barber Shop. All rights reserved.</p>
+</footer>
+<script>
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('main section');
+    sections.forEach(section => {
+        section.classList.add('hidden');
+    });
+    // Show the selected section
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.classList.remove('hidden');
+}
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    const slides = document.getElementsByClassName("gallery-item");
+    const dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+</script>
+</body>
+</html>
