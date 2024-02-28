@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <img src="logo.jpg" alt="Quick Shave Logo" style="width: 90px; height: 90px; float: left;">
+<img src="logo.jpg" alt="Quick Shave Logo" style="width: 90px; height: 90px; float: left;">
 <h1>Welcome to Quick Shave Barber Shop</h1>
 <nav>
 <ul>
@@ -95,20 +95,20 @@ Follow us on Instagram and Facebook for updates, promotions, and style inspirati
 </div>
 <div class="sign-up-htm">
 <div class="group">
-<label for="user" class="label">Username</label>
-<input id="user" type="text" class="input">
+<label for="username" class="label">Username</label>
+<input required name="username" id="text" type="text" class="input">
 </div>
 <div class="group">
-<label for="pass" class="label">Password</label>
-<input id="pass" type="password" class="input" data-type="password">
+<label for="password" class="label">Password</label>
+<input required name="password" id="password" type="password" class="input" data-type="password">
 </div>
 <div class="group">
-<label for="pass" class="label">Confirm Password</label>
-<input id="pass" type="password" class="input" data-type="password">
+<label for="password" class="label">Confirm Password</label>
+<input required name="password2" id="password2" type="password" class="input" data-type="password">
 </div>
 <div class="group">
-<label for="pass" class="label">Email Address</label>
-<input id="pass" type="text" class="input">
+<label for="email" class="label">Email Address</label>
+<input required name="Email" type="email" type="email" class="input">
 </div>
 <div class="group">
 <input type="submit" class="button" value="Sign Up">
@@ -132,27 +132,57 @@ selectedSection.classList.remove('hidden');
 }
 let slideIndex = 0;
 showSlides();
-
 function showSlides() {
-    let i;
-    const slides = document.getElementsByClassName("gallery-item");
-    const dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+let i;
+const slides = document.getElementsByClassName("gallery-item");
+const dots = document.getElementsByClassName("dot");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
 }
-
-
+slideIndex++;
+if (slideIndex > slides.length) {
+slideIndex = 1;
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].className += " active";
+setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+event.preventDefault(); // Prevent the default form submission
+// Construct the JSON object from form data
+const formData = {
+username: document.getElementById("username").value,
+password: document.getElementById("password").value,
+password2: document.getElementById("password2").value,
+email: document.getElementById("email").value
+};
+// Send a POST request to the endpoint
+fetch('https://checkout-barber-django-rest-api.onrender.com/api/signup/client/', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(formData)
+})
+.then(response => {
+if (!response.ok) {
+throw new Error('Network response was not ok');
+}
+return response.json();
+})
+.then(data => {
+console.log('Success:', data);
+// Optionally, you can redirect the user to a success page or perform other actions
+// window.location.href = 'success.html';
+})
+.catch(error => {
+console.error('Error:', error);
+// Optionally, you can display an error message to the user
+});
+});
 </script>
 <footer>
 <p>&copy; Quick Shave 2024 Barber Shop. All rights reserved.</p>
