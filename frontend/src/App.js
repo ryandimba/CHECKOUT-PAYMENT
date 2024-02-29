@@ -9,6 +9,10 @@ import Services from "./components/pages/Services";
 import Gallery from "./components/pages/Gallery";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
+import PaymentPage from "./components/pages/PaymentPage";
+import ForgotPassword from "./components/pages/ForgotPassword";
+import Barbers from "./components/pages/Barbers";
+import BarberProfile from "./components/pages/BarberProfile";
 
 
 
@@ -25,6 +29,10 @@ function App() {
           <Route path="gallery" element={<Gallery></Gallery>}></Route>
           <Route path="login" element={<Login></Login>}></Route>
           <Route path="register" element={<Register></Register>}></Route>
+          <Route path="payment" element={<PaymentPage></PaymentPage>}></Route>
+          <Route path="forgotPassword" element={<ForgotPassword></ForgotPassword>}></Route>
+          <Route path="barbers" element={<Barbers></Barbers>}></Route>
+          <Route path="barbers/id:" element={<BarberProfile></BarberProfile>}></Route>
         </Routes>
       </BrowserRouter> 
 
