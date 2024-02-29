@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Shave Barber Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<img src="logo.jpg" alt="Quick Shave Logo" style="width: 90px; height: 90px; float: left;">
+<h1>Welcome to Quick Shave Barber Shop</h1>
+<nav>
+<ul>
+<li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
+<li><a href="#" onclick="showSection('services')">Services</a></li>
+<li><a href="#" onclick="showSection('about')">About Us</a></li>
+<li><a href="#" onclick="showSection('contact')">Contact</a></li>
+<li><a href="#" onclick="showSection('register')">Register</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section id="services" class="hidden">
+<h2>Our Services</h2>
+<ul>
+<li>Haircuts: Classic, modern, and custom styles for men of all ages.</li>
+<li>Beard Trims: Precision shaping and grooming for a polished look.</li>
+<li>Hot Towel Shaves: Experience the ultimate relaxation with our traditional hot towel shave service.</li>
+<li>Hair Coloring: Enhance your style with professional hair coloring and highlighting services.</li>
+<li>Kids' Cuts: Gentle and patient stylists ensure a positive experience for our youngest clients.</li>
+<li>Special Occasion Styling: Whether it's a wedding, party, or special event, trust us to create the perfect look for your big day.</li>
+</ul>
+</section>
+<section id="about" class="hidden">
+<h2>About Us</h2>
+<p>At Quick Shave, we believe that a good haircut is more than just a style - it's an experience. Established in the heart of Nairobi, we are dedicated to providing premium grooming services in a comfortable and welcoming environment. Our team of skilled barbers is committed to delivering precision cuts, classic styles, and modern trends tailored to each client's unique preferences. With attention to detail and a passion for the craft, we strive to exceed expectations and leave every customer looking and feeling their best.</p>
+</section>
+<section id="gallery">
+<div class="slideshow-container">
+<div class="gallery-item fade" style="background-image: url('images/1.jpg')"></div>
+<div class="gallery-item fade" style="background-image: url('images/2.jpg')"></div>
+<div class="gallery-item fade" style="background-image: url('images/3.jpg')"></div>
+<div class="gallery-item fade" style="background-image: url('images/4.jpg')"></div>
+</div>
+<br>
+<!-- The dots/circles -->
+<div style="text-align:center">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+<span class="dot" onclick="currentSlide(4)"></span>
+</div>
+</section>
+<section id="contact" class="hidden">
+<h3>Contact Us</h3>
+<p><strong>Location:</strong><br>
+Embakasi Road, Quickmat Building<br>
+Opposite KQ Pride Center</p>
+<p><strong>Name:</strong><br>
+QuickShave Barber Shop, Nail Spa & Massage</p>
+<p><strong>Email:</strong><br>
+quickshave***@gmail.com</p>
+<p><strong>Phone:</strong><br>
+0113***663 / 0724***137</p>
+<p><strong>Hours of Operation:</strong><br>
+Monday - Saturday: 9:00 AM - 7:00 PM<br>
+Sunday: Closed</p>
+<p><strong>Social Media:</strong><br>
+Follow us on Instagram and Facebook for updates, promotions, and style inspiration.</p>
+</section>
+<section id="register" class="hidden">
+<div class="login-wrap">
+<div class="login-html">
+<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+<div class="login-form">
+<div class="sign-in-htm">
+<div class="group">
+<label for="user" class="label">Username</label>
+<input id="user" type="text" class="input">
+</div>
+<div class="group">
+<label for="pass" class="label">Password</label>
+<input id="pass" type="password" class="input" data-type="password">
+</div>
+<div class="group">
+<input id="check" type="checkbox" class="check" checked>
+<label for="check"><span class="icon"></span> Keep me Signed in</label>
+</div>
+<div class="group">
+<input type="submit" class="button" value="Sign In">
+</div>
+<div class="hr"></div>
+</div>
+<div class="sign-up-htm">
+<div class="group">
+<label for="username" class="label">Username</label>
+<input required name="username" id="text" type="text" class="input">
+</div>
+<div class="group">
+<label for="password" class="label">Password</label>
+<input required name="password" id="password" type="password" class="input" data-type="password">
+</div>
+<div class="group">
+<label for="password" class="label">Confirm Password</label>
+<input required name="password2" id="password2" type="password" class="input" data-type="password">
+</div>
+<div class="group">
+<label for="email" class="label">Email Address</label>
+<input required name="Email" type="email" type="email" class="input">
+</div>
+<div class="group">
+<input type="submit" class="button" value="Sign Up">
+</div>
+<div class="hr"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+function showSection(sectionId) {
+// Hide all sections
+const sections = document.querySelectorAll('main section');
+sections.forEach(section => {
+section.classList.add('hidden');
+});
+// Show the selected section
+const selectedSection = document.getElementById(sectionId);
+selectedSection.classList.remove('hidden');
+}
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+let i;
+const slides = document.getElementsByClassName("gallery-item");
+const dots = document.getElementsByClassName("dot");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+slideIndex++;
+if (slideIndex > slides.length) {
+slideIndex = 1;
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].className += " active";
+setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+event.preventDefault(); // Prevent the default form submission
+// Construct the JSON object from form data
+const formData = {
+username: document.getElementById("username").value,
+password: document.getElementById("password").value,
+password2: document.getElementById("password2").value,
+email: document.getElementById("email").value
+};
+// Send a POST request to the endpoint
+fetch('https://checkout-barber-django-rest-api.onrender.com/api/signup/client/', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(formData)
+})
+.then(response => {
+if (!response.ok) {
+throw new Error('Network response was not ok');
+}
+return response.json();
+})
+.then(data => {
+console.log('Success:', data);
+// Optionally, you can redirect the user to a success page or perform other actions
+// window.location.href = 'success.html';
+})
+.catch(error => {
+console.error('Error:', error);
+// Optionally, you can display an error message to the user
+});
+});
+</script>
+<footer>
+<p>&copy; Quick Shave 2024 Barber Shop. All rights reserved.</p>
+</footer>
+</body>
+</html>
