@@ -30,7 +30,7 @@ function Register() {
         registerData
       );
       console.log("Registration was successful:", registerData);
-      navigate("login");
+      navigate("/login");
     } catch (error) {
       console.error("Registration Error:", error);
     }

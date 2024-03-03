@@ -2,7 +2,7 @@ import React from "react";
 import barber from "../assets/barber3.jpg";
 import Footer from "./Footer";
 import Header from "./Header";
-import Barber from "../assets/barber3.jpg";
+// import Barber from "../assets/barber3.jpg";
 
 function HomePage() {
   return (
@@ -122,7 +122,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="container"></div>
+      {/* <div className="container"></div>
 
       <div class="container my-5">
         <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
@@ -268,7 +268,7 @@ function HomePage() {
             <img class="rounded-lg-3" src={Barber} alt="" width="720" />
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

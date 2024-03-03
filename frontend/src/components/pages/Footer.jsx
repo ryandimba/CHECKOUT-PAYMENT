@@ -1,6 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    // Update the current year when the component mounts
+    setCurrentYear(new Date().getFullYear());
+  }, []); // Empty dependency array to ensure the effect runs only once
+
+
+
+  const [emailData, setEmailData] = useState({
+    // username: "",
+    // password: "",
+  });
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(emailData);
+
+    try {
+      const response = await axios.post(
+        " https://checkout-barber-django-rest-api.onrender.com/api/login/",
+        emailData
+      );
+      console.log("Email Sent Successfully:", response.data);
+      navigate("/");
+    } catch (error) {
+      console.error("Email Not Sent:", error);
+    }
+  };
+
+  // const handleChange = (event) => {
+  //   setEmailData({
+  //     [event.target.username]: event.target.value,
+  //   });
+  // };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEmailData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   return (
     <>
       <div class="container">
@@ -65,7 +112,7 @@ function Footer() {
             </div>
 
             <div class="col-md-5 offset-md-1 mb-3">
-              <form action="POST">
+              <form onSubmit={handleSubmit}>
                 <h5>Subscribe to our newsletter</h5>
                 <p>Monthly digest of what's new and exciting from us.</p>
                 <div class="d-flex flex-column flex-sm-row w-100 gap-2">
@@ -73,12 +120,15 @@ function Footer() {
                     Email address
                   </label>
                   <input
+                  name="email"
                     id="newsletter1"
                     type="text"
                     class="form-control"
                     placeholder="Email address"
+                    value={emailData.email}
+                    onChange={handleChange}
                   />
-                  <button class="btn btn-primary" type="button">
+                  <button class="btn btn-primary" type="submit">
                     Subscribe
                   </button>
                 </div>
@@ -87,7 +137,7 @@ function Footer() {
           </div>
 
           <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>© 2024 Quick Shave, Inc. All rights reserved.</p>
+            <p>© {currentYear} Quick Shave, Inc. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
               <li class="ms-3">
                 <a class="link-body-emphasis" href="#">

@@ -22,7 +22,7 @@ function Booking() {
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
               <a
                 href="login"
-                class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
+                class="btn btn-primary btn-lg px-4 me-md-2 fw-bold submit"
               >
                 Book for Ksh 400
               </a>

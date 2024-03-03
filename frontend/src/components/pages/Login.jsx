@@ -23,7 +23,9 @@ function Login() {
         loginData
       );
       console.log("Login was successful:", response.data);
-      navigate("/");
+      // After logging in, the user is routed to the booking page
+      // When you don't add the "/" before a Url you get www.current-Url/the link
+      navigate("/booking");
     } catch (error) {
       console.error("Login Error:", error);
     }
