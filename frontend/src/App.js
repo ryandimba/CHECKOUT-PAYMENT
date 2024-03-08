@@ -13,6 +13,8 @@ import PaymentPage from "./components/pages/PaymentPage";
 import ForgotPassword from "./components/pages/ForgotPassword";
 import Barbers from "./components/pages/Barbers";
 import BarberProfile from "./components/pages/BarberProfile";
+import PaymentConfimation from "./components/pages/PaymentConfimation";
+import NoPage from "./components/pages/NoPage";
 
 
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="forgotPassword" element={<ForgotPassword></ForgotPassword>}></Route>
           <Route path="barbers" element={<Barbers></Barbers>}></Route>
           <Route path="barbers/id:" element={<BarberProfile></BarberProfile>}></Route>
+          <Route path="paymentConfirmation" element={<PaymentConfimation></PaymentConfimation>}></Route>
+          <Route path="*" element={<NoPage></NoPage>}></Route>
         </Routes>
       </BrowserRouter> 
 

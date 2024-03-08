@@ -26,7 +26,7 @@ function Footer() {
 
     try {
       const response = await axios.post(
-        " https://checkout-barber-django-rest-api.onrender.com/api/login/",
+        " https://checkout-barber-django-rest-api.onrender.com/api/newsletter/subscribe/",
         emailData
       );
       console.log("Email Sent Successfully:", response.data);

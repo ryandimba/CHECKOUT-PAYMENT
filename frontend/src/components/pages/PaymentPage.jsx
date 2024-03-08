@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Header from './Header'
-import Footer from './Footer'
-import paymentMethods from "../assets/paymentMethods.png";
+import Header from "./Header";
+import Footer from "./Footer";
+import paymentMethods from "../assets/paymentMethods2.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 
 function PaymentPage() {
   const [paymentData, setPaymentData] = useState({
@@ -69,14 +68,14 @@ function PaymentPage() {
                   </div>
                   <div class="inputForm">
                     <svg
-                      height="20"
-                      viewBox="0 0 32 32"
-                      width="20"
                       xmlns="http://www.w3.org/2000/svg"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-cash-stack"
+                      viewBox="0 0 16 16"
                     >
-                      <g id="Layer_3" data-name="Layer 3">
-                        <path d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"></path>
-                      </g>
+                      <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                      <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z" />
                     </svg>
                     <input
                       name="amount"
@@ -94,13 +93,14 @@ function PaymentPage() {
                   </div>
                   <div class="inputForm">
                     <svg
-                      height="20"
-                      viewBox="-64 0 512 512"
-                      width="20"
                       xmlns="http://www.w3.org/2000/svg"
+                      // width="16"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-telephone"
+                      viewBox="0 0 16 16"
                     >
-                      <path d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"></path>
-                      <path d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path>
+                      <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
                     </svg>
                     <input
                       name="phone_number"
@@ -111,18 +111,12 @@ function PaymentPage() {
                       value={paymentData.phone_number}
                       onChange={handleChange}
                     />
-
                   </div>
 
-                  <div class="flex-row">
-                    
-                  </div>
+                  <div class="flex-row"></div>
                   <button class="button-submit" type="submit">
                     Pay Now
                   </button>
-                  
-
-                  
                 </form>
               </div>
             </div>
@@ -131,7 +125,7 @@ function PaymentPage() {
       </div>
       <Footer></Footer>
     </>
-  )
+  );
 }
 
-export default PaymentPage
+export default PaymentPage;

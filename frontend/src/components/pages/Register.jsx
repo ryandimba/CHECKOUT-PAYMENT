@@ -158,7 +158,7 @@ function Register() {
                     </svg>
                     <input
                       name="birthdate"
-                      type="text"
+                      type="date"
                       class="input"
                       placeholder=" Date of Birth YYYY-MM-DD"
                       required
