@@ -15,6 +15,8 @@ import Barbers from "./components/pages/Barbers";
 import BarberProfile from "./components/pages/BarberProfile";
 import PaymentConfimation from "./components/pages/PaymentConfimation";
 import NoPage from "./components/pages/NoPage";
+import TransactionDetails from "./components/pages/TransactionDetails";
+import TestPage from "./components/pages/TestPage";
 
 
 
@@ -37,6 +39,8 @@ function App() {
           <Route path="barbers/id:" element={<BarberProfile></BarberProfile>}></Route>
           <Route path="paymentConfirmation" element={<PaymentConfimation></PaymentConfimation>}></Route>
           <Route path="*" element={<NoPage></NoPage>}></Route>
+          <Route path="trasactionDetails" element={<TransactionDetails></TransactionDetails>}></Route>
+          <Route path="test" element={<TestPage></TestPage>}></Route>
         </Routes>
       </BrowserRouter> 
 
