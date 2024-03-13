@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import RegisterPic from "../assets/Register-pic.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Skeleton, Spin, message } from "antd";
 
 function Register() {
   const [registerData, setRegisterData] = useState({
@@ -18,23 +19,60 @@ function Register() {
     is_active: true,
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(registerData);
+    setIsLoading(true);
 
     try {
       const response = await axios.post(
         "https://checkout-barber-django-rest-api.onrender.com/api/signup/client/",
         registerData
       );
+      message.success("Registration Successful");
+
       console.log("Registration was successful:", registerData);
+      setIsLoading(false);
       navigate("/login");
     } catch (error) {
+      message.error("Registration error: Invalid Credentials");
+
       console.error("Registration Error:", error);
+      setError(error);
+
+      setIsLoading(false);
     }
   };
+  {
+    /* There's an issue with unsuccessful login...the Loading feature keeps loading until you refresh the page*/
+  }
+  if (isLoading) {
+    return (
+      <div>
+        {/* // Default values shown */}
+        {/* <l-tail-chase
+      size="40"
+      speed="1.75" 
+      color="black" 
+  ></l-tail-chase>*/}
+        {/* <Skeleton paragraph={{
+      rows: 15,
+    }}></Skeleton>  */}
+        <Spin spinning={isLoading} fullscreen></Spin>
+      </div>
+    );
+  } else {
+    <div>
+      <Spin spinning={isLoading} fullscreen></Spin>
+    </div>;
+  }
+  if (error) {
+    return <div>Something went wrong. Please try again...</div>;
+  }
 
   // const handleChange = (event) => {
   //   setRegisterData({
