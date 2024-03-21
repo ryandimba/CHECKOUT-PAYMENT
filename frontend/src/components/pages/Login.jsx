@@ -5,6 +5,7 @@ import LoginPic from "../assets/login-pic.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Skeleton, Spin, message } from "antd";
+import { storedUser } from "./Helpers";
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -25,13 +26,20 @@ function Login() {
         " https://checkout-barber-django-rest-api.onrender.com/api/login/",
         loginData
       );
+      if(response.data.token){
+        storedUser(response)
+        setLoginData(loginData)
+        navigate("/profile");
+        console.log("User's Token:",response.data.token)
+      }
       message.success("Login Successful");
       console.log("Login was successful:", response.data);
       // After logging in, the user is routed to the booking page
       // When you don't add the "/" before a Url you get www.current-Url/the link
       setIsLoading(false);
 
-      navigate("/booking");
+
+
     } catch (error) {
       message.error("Login error: Invalid Credentials");
       console.error("Login Error:", error);
@@ -64,7 +72,7 @@ function Login() {
     </div>;
   }
   if (error) {
-    return <div>Something went wrong. Please try again...</div>;
+    return <div className="container h1 my-5">Something went wrong. Please refresh the page and try again...</div>;
   }
 
   // const handleChange = (event) => {

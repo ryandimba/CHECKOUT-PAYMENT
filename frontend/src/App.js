@@ -17,6 +17,8 @@ import PaymentConfimation from "./components/pages/PaymentConfimation";
 import NoPage from "./components/pages/NoPage";
 import TransactionDetails from "./components/pages/TransactionDetails";
 import TestPage from "./components/pages/TestPage";
+import Profile from "./components/pages/Profile";
+import { Protector } from "./components/pages/Helpers";
 
 
 
@@ -25,6 +27,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+                                {/* Public Routes */}
+
           <Route path="/" element={<HomePage></HomePage>}/>
           <Route path="blog" element={<Blog></Blog>}></Route>
           <Route path="about" element={<About></About>}></Route>
@@ -33,14 +37,18 @@ function App() {
           <Route path="gallery" element={<Gallery></Gallery>}></Route>
           <Route path="login" element={<Login></Login>}></Route>
           <Route path="register" element={<Register></Register>}></Route>
+          <Route path="*" element={<NoPage></NoPage>}></Route>
           <Route path="payment" element={<PaymentPage></PaymentPage>}></Route>
-          <Route path="forgotPassword" element={<ForgotPassword></ForgotPassword>}></Route>
           <Route path="barbers" element={<Barbers></Barbers>}></Route>
           <Route path="barbers/id:" element={<BarberProfile></BarberProfile>}></Route>
-          <Route path="paymentConfirmation" element={<PaymentConfimation></PaymentConfimation>}></Route>
-          <Route path="*" element={<NoPage></NoPage>}></Route>
-          <Route path="trasactionDetails" element={<TransactionDetails></TransactionDetails>}></Route>
-          <Route path="test" element={<TestPage></TestPage>}></Route>
+
+                      {/* Protected Routes */}
+
+          <Route path="forgotPassword" element={<Protector Component={ForgotPassword}></Protector>}></Route>
+          <Route path="paymentConfirmation" element={<Protector Component={PaymentConfimation}></Protector>}></Route>
+          <Route path="trasactionDetails" element={<Protector Component={TransactionDetails}></Protector>}></Route>
+          <Route path="test" element={<Protector Component={TestPage}></Protector>}></Route>
+          <Route path="profile" element={<Protector Component={Profile}></Protector>}></Route>
         </Routes>
       </BrowserRouter> 
 
@@ -49,3 +57,4 @@ function App() {
 }
 
 export default App;
+{/* <Protector Component={HomePage}></Protector> */}

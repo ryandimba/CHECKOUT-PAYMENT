@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import axios from "axios";
+import { Button } from 'bootstrap';
 
 
 function Barbers() {
@@ -44,6 +45,7 @@ console.log(records)
       <th scope="col">Phone</th>
       <th scope="col">Address</th>
       <th scope="col">Website</th>
+      <th scope="col">Website</th>
     </tr>
   </thead>
   <tbody>
@@ -57,6 +59,7 @@ console.log(records)
                 <td>{list.phone}</td>
                 <td>{list.address.street}, {list.address.suite}, {list.address.city}, {list.address.zipcode}</td>
                 <td>{list.website}</td>
+                <td><Button>{list.website}</Button></td>
                  </tr>
             ))}
     {/* <tr>

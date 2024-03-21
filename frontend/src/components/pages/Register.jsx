@@ -71,7 +71,7 @@ function Register() {
     </div>;
   }
   if (error) {
-    return <div>Something went wrong. Please try again...</div>;
+    return <div className="container h1 my-5">Something went wrong. Please refresh the page and try again...</div>;
   }
 
   // const handleChange = (event) => {
