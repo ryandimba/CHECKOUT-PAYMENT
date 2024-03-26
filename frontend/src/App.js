@@ -19,6 +19,7 @@ import TransactionDetails from "./components/pages/TransactionDetails";
 import TestPage from "./components/pages/TestPage";
 import Profile from "./components/pages/Profile";
 import { Protector } from "./components/pages/Helpers";
+import BookingDetails from "./components/pages/BookingDetails";
 
 
 
@@ -37,10 +38,11 @@ function App() {
           <Route path="gallery" element={<Gallery></Gallery>}></Route>
           <Route path="login" element={<Login></Login>}></Route>
           <Route path="register" element={<Register></Register>}></Route>
-          <Route path="*" element={<NoPage></NoPage>}></Route>
+          <Route path="bookingDetails/:id" element={<BookingDetails></BookingDetails>}></Route>
           <Route path="payment" element={<PaymentPage></PaymentPage>}></Route>
           <Route path="barbers" element={<Barbers></Barbers>}></Route>
-          <Route path="barbers/id:" element={<BarberProfile></BarberProfile>}></Route>
+          <Route path="barbers/:id" element={<BarberProfile></BarberProfile>}></Route>
+          <Route path="*" element={<NoPage></NoPage>}></Route>
 
                       {/* Protected Routes */}
 

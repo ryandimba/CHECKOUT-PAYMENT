@@ -6,6 +6,7 @@ function BarberProfile() {
   return (
     <>
         <Header></Header>
+        <hr></hr>
         BarberProfile
         <Footer></Footer>
     </>

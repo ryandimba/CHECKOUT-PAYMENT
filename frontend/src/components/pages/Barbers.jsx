@@ -23,6 +23,7 @@ console.log(records)
       .then(response => {
         // Set records state with data from the response
         setRecords(response.data);
+        console.log("Records",records);
       })
       .catch(error => {
         // Handle any errors
@@ -59,7 +60,7 @@ console.log(records)
                 <td>{list.phone}</td>
                 <td>{list.address.street}, {list.address.suite}, {list.address.city}, {list.address.zipcode}</td>
                 <td>{list.website}</td>
-                <td><Button>{list.website}</Button></td>
+                {/* <td><Button>{list.website}</Button></td> */}
                  </tr>
             ))}
     {/* <tr>
