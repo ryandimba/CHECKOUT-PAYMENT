@@ -331,8 +331,8 @@ function Register() {
                   <p class="p line">Or With</p>
 
                   <div class="flex-row">
-                    <button class="btn google">Google</button>
-                    <button class="btn apple">Apple</button>
+                    {/* <button class="btn google">Google</button>
+                    <button class="btn apple">Apple</button> */}
                   </div>
                 </form>
               </div>
