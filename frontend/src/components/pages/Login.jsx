@@ -23,7 +23,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        " https://checkout-barber-django-rest-api.onrender.com/api/login/",
+        " https://quickshave.evah-audi.tech/api/login/",
         loginData
       );
       if(response.data.token){
