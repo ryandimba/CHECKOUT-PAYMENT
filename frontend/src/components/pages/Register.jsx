@@ -30,7 +30,7 @@ function Register() {
 
     try {
       const response = await axios.post(
-        "https://checkout-barber-django-rest-api.onrender.com/api/signup/client/",
+        "https://quickshave.evah-audi.tech/api/signup/manager",
         registerData
       );
       message.success("Registration Successful");
