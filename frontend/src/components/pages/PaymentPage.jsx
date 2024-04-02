@@ -19,7 +19,7 @@ function PaymentPage() {
 
     try {
       const response = await axios.post(
-        "https://checkout-barber-django-rest-api.onrender.com/api/mpesa/lipanampesa/",
+        "https://quickshave.evah-audi.tech/api/mpesa/lipanampesa/",
         paymentData
       );
       console.log("Payment was successful:", response.data);
