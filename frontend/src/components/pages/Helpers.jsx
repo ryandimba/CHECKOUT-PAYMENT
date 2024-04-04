@@ -48,7 +48,7 @@ export const useBookingView = () => {
   const fetchBooking = async () => {
     try {
       const response = await axios.get(
-        `https://checkout-barber-django-rest-api.onrender.com/api/services/details/byserviceid/?id=${serviceID}`
+        `https://quickshave.evah-audi.tech/api/services/details/byserviceid/?id=${serviceID}`
       );
       setservice(response.data);
       console.log("API DATA:", response.data);

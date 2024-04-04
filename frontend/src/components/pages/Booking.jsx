@@ -21,7 +21,7 @@ function Booking() {
     // Use Axios to fetch data
     axios
       .get(
-        "https://checkout-barber-django-rest-api.onrender.com/api/get/services/"
+        "https://quickshave.evah-audi.tech/api/get/services/"
       )
       .then((response) => {
         // Set records state with data from the response
@@ -65,7 +65,7 @@ function Booking() {
                   </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                  <img class="rounded-lg-3" src={Barber} alt="" width="720" />
+                  <img class="rounded-lg-3" src={list.service_image} alt="" width="720" />
                 </div>
               </div>
             ))}

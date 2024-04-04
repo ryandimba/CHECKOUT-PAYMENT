@@ -42,7 +42,7 @@ const Header = () => {
           <div>
             {isLoggedIn ? (
               <>
-                <Link to={"/payment"}>Logout</Link>
+                <Link to={"/logout"}>Logout</Link>
                 <Link to={"/profile"}> {userName}</Link>
               </>
             ) : (

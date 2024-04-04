@@ -17,7 +17,7 @@ function Profile() {
         console.log("username", name.userName, name.userID);
 
         const response = await axios.get(
-          `https://checkout-barber-django-rest-api.onrender.com/api/users/details/byid/?id=${name.userID}`
+          `https://quickshave.evah-audi.tech/api/users/details/byid/?id=${name.userID}`
         );
         setBookingDetails(response.data);
         console.log(name.userName);

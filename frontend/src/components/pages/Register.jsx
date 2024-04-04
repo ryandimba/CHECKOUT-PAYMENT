@@ -30,7 +30,7 @@ function Register() {
 
     try {
       const response = await axios.post(
-        "https://quickshave.evah-audi.tech/api/signup/manager",
+        "https://quickshave.evah-audi.tech/api/signup/client/",
         registerData
       );
       message.success("Registration Successful");

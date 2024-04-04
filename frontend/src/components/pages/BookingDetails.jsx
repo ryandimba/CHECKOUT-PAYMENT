@@ -13,6 +13,7 @@ function BookingDetails() {
   const price = service.price - 100; // Assuming PromoCode is fixed at 100
 
   const { userID } = userData();
+  console.log(userID)
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -20,7 +21,7 @@ function BookingDetails() {
 
     try {
       const response = await axios.post(
-        `https://checkout-barber-django-rest-api.onrender.com/api/service/byuserid/?user_id=${userID}&service=${service.service}&description=${service.description}&price=${price}`,
+        `https://quickshave.evah-audi.tech/api/service/byuserid/?user_id=${userID}&service=${service.service}&description=${service.description}&price=${price}`,
         // {
         //   user_id: userID,
         //   service_name: service.service,
