@@ -66,3 +66,29 @@ export const useBookingView = () => {
     service,
   };
 };
+
+export const getGreeting =()=> {
+  const currentTime = new Date();
+  const currentHour = currentTime.getHours();
+
+  let greeting;
+  let emoji;
+
+  if (currentHour < 12) {
+      greeting = "Good morning";
+      emoji = "☀️";
+  } else if (currentHour < 18) {
+      greeting = "Good afternoon";
+      emoji = "🌤️";
+  } else {
+      greeting = "Good evening";
+      emoji = "🌙";
+  }
+
+  return [ greeting, emoji ];
+}
+
+// Example usage:
+const { greeting, emoji } = getGreeting();
+console.log(`${greeting}, ${emoji} welcome back!`);
+

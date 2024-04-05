@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { userData } from "./Helpers";
+import { getGreeting, userData } from "./Helpers";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -31,14 +31,17 @@ function Profile() {
   }, [userID]);
 
   const { userName, phoneNumber } = userData();
-
+getGreeting()
+// Example usage:
+const greeting = getGreeting();
+console.log(`${greeting}, welcome back!`);
   return (
     <>
       <Header />
       <hr />
       <div className="container">
         <p>
-          Welcome back {userName}, your phone number is {phoneNumber} and your ID is{" "}
+           {greeting} {userName} ,welcome back your phone number is {phoneNumber} and your ID is{" "}
           {userID}
         </p>
         <table class="table table-striped table-responsive{-sm|-md|-lg|-xl|-xxl}">

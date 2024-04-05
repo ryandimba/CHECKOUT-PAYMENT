@@ -3,7 +3,7 @@ import logo from "../assets/logo.jpeg";
 import { Button } from "antd";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { userData } from "./Helpers";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navRef = useRef();
@@ -18,11 +18,18 @@ const Header = () => {
     navRef.current.classList.toggle("responsive_nav");
     setIsOpen(!isOpen);
   };
-  const name = sessionStorage.getItem('user')
-  JSON.parse(name)
+  const name = sessionStorage.getItem("user");
+  // JSON.parse(name)
   console.log(name);
 
-  const { userName,phoneNumber,userID } = userData()
+  const { userName, phoneNumber, userID } = userData();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.setItem("user", "");
+    navigate("/login");
+  };
+  
 
   return (
     <>
@@ -34,16 +41,20 @@ const Header = () => {
           <a href="/">Quick Shave</a>
           <a href="blog">Blog</a>
           <a href="about">About</a>
-          <a href="gallery">Gallery</a>
+          <a href="gallery" onClick={handleLogout}>Gallery</a>
           <a href="booking">
-            {/* <Button className="btn"></Button> */}
             Book Us
           </a>
           <div>
             {isLoggedIn ? (
               <>
-                <Link to={"/logout"}>Logout</Link>
                 <Link to={"/profile"}> {userName}</Link>
+                {/* <button className="btn btn-primary btn-lg px-1 gap-3" onClick={handleLogout}>
+                  Logout
+                </button>{" "} */}
+                          <a href="" onClick={handleLogout}>Logout</a>
+
+                {/* <Button onClick={handleLogout}>Logout</Button> */}
               </>
             ) : (
               <Link to={"/login"}>Login</Link>
