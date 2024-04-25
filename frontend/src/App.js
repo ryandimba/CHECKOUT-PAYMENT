@@ -39,7 +39,7 @@ function App() {
           <Route path="login" element={<Login></Login>}></Route>
           <Route path="register" element={<Register></Register>}></Route>
           <Route path="bookingDetails/:id" element={<BookingDetails></BookingDetails>}></Route>
-          <Route path="payment" element={<PaymentPage></PaymentPage>}></Route>
+          <Route path="payment/:id" element={<PaymentPage></PaymentPage>}></Route>
           <Route path="barbers" element={<Barbers></Barbers>}></Route>
           <Route path="barbers/:id" element={<BarberProfile></BarberProfile>}></Route>
           <Route path="*" element={<NoPage></NoPage>}></Route>
@@ -47,9 +47,9 @@ function App() {
                       {/* Protected Routes */}
 
           <Route path="forgotPassword" element={<Protector Component={ForgotPassword}></Protector>}></Route>
-          <Route path="paymentConfirmation" element={<Protector Component={PaymentConfimation}></Protector>}></Route>
+          <Route path="paymentConfirmation/:id" element={<Protector Component={PaymentConfimation}></Protector>}></Route>
           <Route path="trasactionDetails" element={<Protector Component={TransactionDetails}></Protector>}></Route>
-          <Route path="test" element={<Protector Component={TestPage}></Protector>}></Route>
+          <Route path="test/:id" element={<Protector Component={TestPage}></Protector>}></Route>
           <Route path="profile" element={<Protector Component={Profile}></Protector>}></Route>
         </Routes>
       </BrowserRouter> 

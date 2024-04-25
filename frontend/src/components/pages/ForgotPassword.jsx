@@ -18,7 +18,7 @@ function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        " https://checkout-barber-django-rest-api.onrender.com/api/login/",
+        " https://quickshave.evah-audi.tech/api/users/passwordlink-reset/",
         loginData
       );
       console.log("Password Reset successful:", response.data);

@@ -50,7 +50,7 @@ function Booking() {
                   <p class="lead">{list.description}</p>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
                     <Link
-                      to={`/bookingDetails/${list.id}`}
+                      to={`/bookingDetails/${list.id}&service=${list.service}&amount=${list.price}`}
                       className="btn btn-primary btn-lg px-4 me-md-2 fw-bold submit"
                     >
                       Ksh {list.price}
@@ -65,7 +65,7 @@ function Booking() {
                   </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                  <img class="rounded-lg-3" src={list.service_image} alt="" width="720" />
+                  <img class="rounded-lg-3" src={list.service_image} alt="" width="320" />
                 </div>
               </div>
             ))}

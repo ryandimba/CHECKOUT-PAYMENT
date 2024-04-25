@@ -20,7 +20,7 @@ function TransactionDetails() {
     // Use Axios to fetch data
     axios
       .get(
-        "https://checkout-barber-django-rest-api.onrender.com/api/get/users/"
+        "https://quickshave.evah-audi.tech/api/get/users/"
       )
       .then((response) => {
         // Set records state with data from the response

@@ -4,8 +4,15 @@ import Footer from "./Footer";
 import paymentMethods from "../assets/paymentMethods2.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { getGreeting, userData } from "./Helpers";
+import { useBookingView } from "./Helpers";
+
+
 
 function PaymentPage() {
+  const { service } = useBookingView();
+  console.log(service);
+
   const [paymentData, setPaymentData] = useState({
     amount: "",
     phone_number: "",
@@ -43,6 +50,7 @@ function PaymentPage() {
       [name]: value,
     }));
   };
+  const { userName, phoneNumber } = userData();
   return (
     <>
       <Header></Header>
@@ -65,7 +73,7 @@ function PaymentPage() {
                 <form class="form img-fluid" onSubmit={handleSubmit}>
                   <div class="flex-column">
                     <label>Amount </label>
-                  </div>
+                  </div>{service.price}
                   <div class="inputForm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -87,10 +95,10 @@ function PaymentPage() {
                       onChange={handleChange}
                     />
                   </div>
-
                   <div class="flex-column">
                     <label>Phone Number </label>
                   </div>
+                  {phoneNumber}: 
                   <div class="inputForm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

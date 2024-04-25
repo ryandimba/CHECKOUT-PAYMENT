@@ -4,11 +4,21 @@ import Footer from "./Footer";
 import axios from "axios";
 import { tailChase } from "ldrs";
 import { Skeleton, Spin, message } from "antd";
+import { getGreeting, userData } from "./Helpers";
+import { useBookingView } from "./Helpers";
+import { useNavigate } from "react-router-dom";
+
 
 function TestPage() {
+  const navigate = useNavigate()
+  const { service } = useBookingView();
+  const price = service.price
+  console.log(service);
   const [records, setRecords] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
+  const { userName, phoneNumber } = userData();
+  const paymentData = {price, phoneNumber}
 
   // useEffect(() =>{
 
@@ -25,7 +35,7 @@ function TestPage() {
     try {
       axios
         .get(
-          "https://checkout-barber-django-rest-api.onrender.com/api/get/services/"
+          "https://quickshave.evah-audi.tech/api/get/users/"
         )
         .then((response) => {
           // Set records state with data from the response
@@ -64,12 +74,34 @@ function TestPage() {
   if (error) {
     return <div>Something went wrong. Please try again...</div>;
   }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(paymentData);
+
+    try {
+      const response = await axios.post(
+        "https://quickshave.evah-audi.tech/api/mpesa/lipanampesa/",
+        paymentData
+      );
+      console.log("Payment was successful:", response.data);
+      // After a successful payment, the user is routed to the /paymentConfirmation page
+      // When you don't add the "/" before a Url you get www.current-Url/the link
+      navigate("/paymentConfirmation");
+    } catch (error) {
+      console.error("Payment Error:", error);
+    }
+  };
 
   return (
     <>
       <Header></Header>
       <hr></hr>
       <p></p>
+      <form  onSubmit={handleSubmit}>
+        Number: {phoneNumber}
+        <p>Amount: {service.price}</p>
+        <button type="submit">submit</button>
+      </form>
       {/* <div className="table-responsive-xxl">
         <table class="table table-striped table-bordered">
           <thead>
