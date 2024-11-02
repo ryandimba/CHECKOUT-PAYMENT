@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import paymentMethods from "../assets/paymentMethods2.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { getGreeting, userData } from "./Helpers";
+import { getGreeting, userData, BASE_URL } from "./Helpers";
 import { useBookingView } from "./Helpers";
 
 
@@ -26,7 +26,7 @@ function PaymentPage() {
 
     try {
       const response = await axios.post(
-        "https://quickshave.evah-audi.tech/api/mpesa/lipanampesa/",
+        `${BASE_URL}api/mpesa/lipanampesa/`,
         paymentData
       );
       console.log("Payment was successful:", response.data);

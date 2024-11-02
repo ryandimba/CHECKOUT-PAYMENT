@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import barber from "../assets/paymentMethods2.jpg";
 import { useBookingView } from "./Helpers";
-import { userData } from "./Helpers";
+import { userData, BASE_URL } from "./Helpers";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Skeleton, Spin, message } from "antd";
@@ -24,7 +24,7 @@ function BookingDetails() {
 
     try {
       const response = await axios.post(
-        `https://quickshave.evah-audi.tech/api/service/byuserid/?user_id=${userID}&service=${service.service}&description=${service.description}&price=${price}&service_image=${service.service_image}`
+        `${BASE_URL}api/service/byuserid/?user_id=${userID}&service=${service.service}&description=${service.description}&price=${price}&service_image=${service.service_image}`
         // {
         //   user_id: userID,
         //   service_name: service.service,

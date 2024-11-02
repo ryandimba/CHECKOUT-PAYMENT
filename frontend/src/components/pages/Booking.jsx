@@ -4,9 +4,12 @@ import Footer from "./Footer";
 import Barber from "../assets/barber3.jpg";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "./Helpers";
 
 function Booking() {
   const [records, setRecords] = useState([]);
+  const [loading, setIsLoading] = useState(true)
+  const [error, setError] = useState('')
 
   // useEffect(() =>{
 
@@ -21,24 +24,38 @@ function Booking() {
     // Use Axios to fetch data
     axios
       .get(
-        "https://quickshave.evah-audi.tech/api/get/services/"
+        `${BASE_URL}api/get/services/`
       )
       .then((response) => {
         // Set records state with data from the response
         setRecords(response.data);
+        setIsLoading(false)
       })
       .catch((error) => {
         // Handle any errors
+        setError("Error fetching data")
+        setIsLoading(false)
         console.error("Error fetching data:", error);
       });
   }, []); // Empty dependency array to fetch data only once when component mounts
+
+  if (loading){
+    return <div className="" style={{textAlign:"center"}}>Loading..</div>
+  }
+
+  if (error){
+    return <div>{error}</div>
+  }
   return (
     <>
       <Header></Header>
       <div>
         <div class="container my-5">
           <form>
-            {records.map((list, index) => (
+            {records.length == 0 ?
+            <div>No data found</div>
+            :
+            records.map((list, index) => (
               <div
                 key={index}
                 class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"

@@ -5,6 +5,7 @@ import RegisterPic from "../assets/Register-pic.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Skeleton, Spin, message } from "antd";
+import { BASE_URL } from "./Helpers";
 
 function Register() {
   const [registerData, setRegisterData] = useState({
@@ -30,7 +31,7 @@ function Register() {
 
     try {
       const response = await axios.post(
-        "https://quickshave.evah-audi.tech/api/signup/client/",
+        `${BASE_URL}api/signup/client/`,
         registerData
       );
       message.success("Registration Successful");

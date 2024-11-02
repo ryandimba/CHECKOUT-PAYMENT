@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { getGreeting, userData } from "./Helpers";
+import { getGreeting, userData, BASE_URL } from "./Helpers";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
@@ -50,7 +50,7 @@ function Profile() {
     try {
       // Make a DELETE request to the API endpoint to delete the service
       const response = await axios.delete(
-        `https://quickshave.evah-audi.tech/api/pricelist/details/byid/?id=${serviceId}`
+        `${BASE_URL}api/pricelist/details/byid/?id=${serviceId}`
       );
       console.log(response.data);
       // Update the state to reflect the changes after successful deletion

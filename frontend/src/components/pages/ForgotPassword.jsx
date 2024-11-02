@@ -4,6 +4,7 @@ import Footer from './Footer'
 import LoginPic from "../assets/login-pic.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from './Helpers';
 
 function ForgotPassword() {
     const [loginData, setLoginData] = useState({
@@ -18,7 +19,7 @@ function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        " https://quickshave.evah-audi.tech/api/users/passwordlink-reset/",
+        `${BASE_URL}api/users/passwordlink-reset/`,
         loginData
       );
       console.log("Password Reset successful:", response.data);

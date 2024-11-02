@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
+
+export const BASE_URL = 'https://checkout-barber-django-rest-api.onrender.com/'
+
 //This block of code stores the logged in user's token to the session storage
 export const storedUser = (response) => {
   sessionStorage.setItem(

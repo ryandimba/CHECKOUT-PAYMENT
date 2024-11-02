@@ -5,7 +5,7 @@ import LoginPic from "../assets/login-pic.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Skeleton, Spin, message } from "antd";
-import { storedUser } from "./Helpers";
+import { BASE_URL, storedUser } from "./Helpers";
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -23,7 +23,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        " https://quickshave.evah-audi.tech/api/login/",
+        `${BASE_URL}api/login/`,
         loginData
       );
       if(response.data.token){
@@ -51,29 +51,7 @@ function Login() {
   {
     /* There's an issue with unsuccessful login...the Loading feature keeps loading until you refresh the page*/
   }
-  if (isLoading) {
-    return (
-      <div>
-        {/* // Default values shown */}
-        {/* <l-tail-chase
-      size="40"
-      speed="1.75" 
-      color="black" 
-  ></l-tail-chase>*/}
-        {/* <Skeleton paragraph={{
-      rows: 15,
-    }}></Skeleton>  */}
-        <Spin spinning={isLoading} fullscreen></Spin>
-      </div>
-    );
-  } else {
-    <div>
-      <Spin spinning={isLoading} fullscreen></Spin>
-    </div>;
-  }
-  if (error) {
-    return <div className="container h1 my-5">Something went wrong. Please refresh the page and try again...</div>;
-  }
+  
 
   // const handleChange = (event) => {
   //   setLoginData({
@@ -175,9 +153,13 @@ function Login() {
                       <a href="forgotPassword">Forgot password?</a>{" "}
                     </span>
                   </div>
-                  <button class="button-submit" type="submit">
-                    Sign In
-                  </button>
+                  {isLoading? <button class="button-submit" type="submit" disabled>
+                    Loading...
+                  </button>:
+                  <button class="button-submit" type="submit" >
+                  Sign In
+                </button>}
+                  
                   <p class="p">
                     Don't have an account?{" "}
                     <span class="span">

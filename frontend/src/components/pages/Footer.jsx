@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from './Helpers';
 
 function Footer() {
 
@@ -26,7 +27,7 @@ function Footer() {
 
     try {
       const response = await axios.post(
-        " https://quickshave.evah-audi.tech/api/newsletter/subscribe/",
+        `${BASE_URL}api/newsletter/subscribe/`,
         emailData
       );
       console.log("Email Sent Successfully:", response.data);

@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import barber from "../assets/paymentMethods2.jpg";
 import axios from "axios";
+import { BASE_URL } from "./Helpers";
 
 function TransactionDetails() {
   const [records, setRecords] = useState([]);
@@ -20,7 +21,7 @@ function TransactionDetails() {
     // Use Axios to fetch data
     axios
       .get(
-        "https://quickshave.evah-audi.tech/api/get/users/"
+        `${BASE_URL}api/get/users/`
       )
       .then((response) => {
         // Set records state with data from the response

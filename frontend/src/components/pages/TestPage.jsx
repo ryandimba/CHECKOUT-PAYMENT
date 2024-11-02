@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import axios from "axios";
 import { tailChase } from "ldrs";
 import { Skeleton, Spin, message } from "antd";
-import { getGreeting, userData } from "./Helpers";
+import { getGreeting, userData, BASE_URL } from "./Helpers";
 import { useBookingView } from "./Helpers";
 import { useNavigate } from "react-router-dom";
 
@@ -80,7 +80,7 @@ function TestPage() {
 
     try {
       const response = await axios.post(
-        "https://quickshave.evah-audi.tech/api/mpesa/lipanampesa/",
+        `${BASE_URL}api/mpesa/lipanampesa/`,
         paymentData
       );
       console.log("Payment was successful:", response.data);
